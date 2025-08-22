@@ -11,7 +11,8 @@ set -e
 apt-get update
 apt-get install -y --no-install-recommends \
         imagemagick \
-        libapache2-mod-xsendfile
+        libapache2-mod-xsendfile \
+        git 
 apt-get autoclean
 
 # install extensions

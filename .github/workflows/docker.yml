@@ -71,25 +71,15 @@ jobs:
           # Initialize tag arrays
           TAGS=()
           
-          # DockerHub Tags
-          if [[ "${{ matrix.release.type }}" == "master" ]]; then
-            TAGS+=("dokuwiki/dokuwiki:master")
-          else
-            TAGS+=("dokuwiki/dokuwiki:${{ matrix.release.date }}")
-            TAGS+=("dokuwiki/dokuwiki:${{ matrix.release.type }}")
-            if [[ "${{ matrix.release.type }}" == "stable" ]]; then
-              TAGS+=("dokuwiki/dokuwiki:latest")
-            fi
-          fi
           
           # GitHub Packages Tags
           if [[ "${{ matrix.release.type }}" == "master" ]]; then
-            TAGS+=("ghcr.io/dokuwiki/dokuwiki:master")
+            TAGS+=("ghcr.io/tiernano/dokuwiki-docker:master")
           else
-            TAGS+=("ghcr.io/dokuwiki/dokuwiki:${{ matrix.release.date }}")
-            TAGS+=("ghcr.io/dokuwiki/dokuwiki:${{ matrix.release.type }}")
+            TAGS+=("ghcr.io/tiernano/dokuwiki-docker:${{ matrix.release.date }}")
+            TAGS+=("ghcr.io/tiernano/dokuwiki-docker:${{ matrix.release.type }}")
             if [[ "${{ matrix.release.type }}" == "stable" ]]; then
-              TAGS+=("ghcr.io/dokuwiki/dokuwiki:latest")
+              TAGS+=("ghcr.io/tiernano/dokuwiki-docker:latest")
             fi
           fi
           
