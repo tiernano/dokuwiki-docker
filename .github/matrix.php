@@ -39,7 +39,7 @@ function getLastCommit($repo, $branch)
     ];
     $context = stream_context_create($opts);
 
-    $data = file_get_contents("https://api.github.com/repos/dokuwiki/$repo/commits/$branch", false, $context);
+    $data = file_get_contents("https://api.github.com/repos/tiernano/dokuwiki-docker/commits/$branch", false, $context);
     $json = json_decode($data, true);
     return $json['sha'];
 }
