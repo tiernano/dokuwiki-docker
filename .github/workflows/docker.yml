@@ -1,9 +1,9 @@
 name: Build and Publish Docker Images
 on:
   workflow_dispatch:
-  on: push 
-  branches:
-    - main
+  push:
+    branches:
+      - main
 
 jobs:
   docker:
